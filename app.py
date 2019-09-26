@@ -51,7 +51,7 @@ def playlists_show(playlist_id):
 def playlists_edit(playlist_id):
     """Show the edit form for a playlist."""
     playlist = playlists.find_one({'_id': ObjectId(playlist_id)})
-    video_links = '\n'.join(playlist.get('videos'))
+    # video_links = '\n'.join(playlist.get('videos'))
     return render_template('playlists_edit.html', playlist=playlist, title='Edit Playlist')
 
 @app.route('/playlists/<playlist_id>', methods=['POST'])
